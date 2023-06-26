@@ -1,23 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import CountdownTimer from "./Components/CountdownTimer/CountdownTimer";
 
 function App() {
+  const durationInMilliseconds = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+  const countdownTimestampMs = new Date().getTime() + durationInMilliseconds;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CountdownTimer countdownTimestampMs={countdownTimestampMs} />
     </div>
   );
 }
